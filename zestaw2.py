@@ -4,7 +4,6 @@ line = "ab\tcd\nef\n";
 print line;
 print len(line.split());
 
-
 #2.11
 print('Zad 2.11\n');
 line = "qwerty";
@@ -36,9 +35,8 @@ print('Zad 2.14\n');
 line = "ab\tcdqwd\nef\n";
 line  = line.split();
 print line;
-line.sort(key=len);
-print line[-1];
-print len(line[-1]);
+print max([len(x) for x in line]);
+print max(line, key=len);
 
 #2.15
 print ('Zad 2.15\n');
