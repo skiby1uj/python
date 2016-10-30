@@ -1,0 +1,167 @@
+
+Zadania
+
+OBOWIĄZKOWE DO PRZESŁANIA: 2.10-2.19
+ZADANIE 2.1 (KEYWORDS)
+
+Wygenerować listę słów kluczowych Pythona. Sprawdzić, czy można utworzyć zmienne o takich nazwach.
+
+Sprawdzić listę obiektów wbudowanych. W czasie normalnej pracy nie ma potrzeby importowania modułu __builtin__, ponieważ obiekty wbudowane są dostępne.
+
+>>> import __builtin__
+>>> dir(__builtin__)
+
+ZADANIE 2.2 (BOOL)
+
+W trybie interaktywnym zbadać podane wyrażenia i wyjaśnić rezultaty.
+
+5 == 5, 4 > 5              # porównania
+type(True), type(False)       # bool, bool
+type(1), type(0)              # int, int
+x = 5
+x == 5 and 3                  # 3
+x == 4 and 3                  # False
+3 and x == 5                  # True
+3 and x == 4                  # False
+1 < x < 9               # łączenie operatorów porównania
+isinstance(True, int)         # True
+isinstance(True, bool)        # True
+
+ZADANIE 2.3 (LICZBY)
+
+W trybie interaktywnym zbadać:
+
+    zapis liczb różnych typów,
+    sposoby wyświetlania liczb - str(), repr(),
+    konwersję typów (jawną i niejawną),
+    wbudowane funkcje matematyczne,
+    różne rodzaje dzielenia w Pythonie (x / y, x // y, x % y),
+    różne sposoby zaokrąglania liczb [round(x), int(x + 0.5), math.trunc()],
+    sprawdzić efekt dzielenia przez zero (ZeroDivisionError). 
+
+ZADANIE 2.4 (STR)
+
+W trybie interaktywnym zbadać podane wyrażenia.
+
+# Funkcja len().
+len("napis")                  # 5
+len(str(2 ** 10000))            # konwersja liczby do napisu
+
+"abc", 'abc'                  # identyczne
+S = "ab"   'cd'               # niejawna konkatenacja do "abcd"
+"ab'cd", 'ab"cd'              # zastosowanie
+S = "a\tb\nc\"d"              # znaki specjalne
+print len(S), S               # 7
+
+S = """jeden
+dwa
+trzy"""     # napis wielowierszowy, podobnie z '''
+print S
+
+# Sprawdzić indeksowanie i wycinki.
+S = "abrakadabra"
+S[2], S[-3], S[3:5], S[3:], S[:4]
+
+# Sprawdzić konkatenację (łączenie) i powtórzenie napisów.
+L = ["a", "b", "c"]
+L[0] + L[1] + L[2]            # ręczne dodawanie
+L[0] + "=" + L[1] + "=" + L[2]
+"".join(L)                    # zalecane
+"=".join(L)                   # zalecane
+# S.join([S1,S2,S3]) daje S1+S+S2+S+S3
+
+# Sprawdzić niezmienność napisów.
+
+Zbadać metody dla napisów, lista metod dir(str). Zwrócić uwagę na metody: find(), replace(), strip(), lower(), upper(), zfill().
+ZADANIE 2.5 (LIST)
+
+W trybie interaktywnym zbadać podane wyrażenia.
+
+L = [3, "xyz", [10, 20]]
+len(L)
+L[1], L[1][0], L[2], L[2][1]
+M = L
+L[1] = 5     # zmienia się też M!
+
+# Indeksowanie 
+
+# Wycinki.
+
+# Konkatenacja i powtórzenie.
+
+# Podstawianie pod element lub wycinek.
+
+# Generowanie list funkcją range().
+
+# Kopiowanie list.
+
+# Sortowanie list.
+
+# Listy składane.
+
+Spróbować wyświetlić element poza końcem listy (IndexError). Spróbować przypisać element pod indeksem poza końcem listy.
+
+Zbadać różnicę między podstawianiem L2 = L1, a kopiowaniem list L2 = list(L1). Wykorzystać funkcję id().
+
+Zbadać metody dla list, lista metod dir(list).
+ZADANIE 2.6 (TUPLE)
+
+W trybie interaktywnym zbadać operacje na krotkach.
+
+Zbadać metody dla krotek, lista metod dir(tuple).
+ZADANIE 2.7 (DICT)
+
+W trybie interaktywnym zbadać operacje na słownikach, lista metod dir(dict).
+
+Sprawdzić możliwość pobrania nieistniejącego klucza (KeyError).
+ZADANIE 2.8 (ZBIORY)
+
+W trybie interaktywnym zbadać operacje na zbiorach.
+
+Zbadać metody dla zbiorów, listy metod dir(set) oraz dir(frozenset).
+
+Wykorzystać zbiór do usunięcia duplikatów z listy.
+ZADANIE 2.9 (FILE)
+
+Napisać funkcję wykonującą kopiowanie pliku, która pomija linie rozpoczynające się od znaku # (linie z komentarzami).
+ZADANIE 2.10
+
+Mamy dany napis wielowierszowy line. Podać sposób obliczenia liczby wyrazów w napisie. Przez wyraz rozumiemy ciąg "czarnych" znaków, oddzielony od innych wyrazów białymi znakami (spacja, tabulacja, newline).
+
+ZADANIE 2.11
+
+Podać sposób wyświetlania napisu word tak, aby jego znaki były rozdzielone znakiem podkreślenia.
+
+ZADANIE 2.12
+
+Zbudować napis stworzony z pierwszych znaków wyrazów z wiersza line. Zbudować napis stworzony z ostatnich znaków wyrazów z wiersza line.
+
+ZADANIE 2.13
+
+Znaleźć łączną długość wyrazów w napisie line. Wskazówka: można skorzystać z funkcji sum().
+
+ZADANIE 2.14
+
+Znaleźć: (a) najdłuższy wyraz, (b) długość najdłuższego wyrazu w napisie line.
+
+ZADANIE 2.15
+
+Na liście L znajdują się liczby całkowite dodatnie. Stworzyć napis będący ciągiem cyfr kolejnych liczb z listy L.
+
+ZADANIE 2.16
+
+W tekście znajdującym się w zmiennej line zamienić ciąg znaków "GvR" na "Guido van Rossum".
+
+ZADANIE 2.17
+
+Posortować wyrazy z napisu line raz alfabetycznie, a raz pod względem długości. Wskazówka: funkcja wbudowana sorted().
+
+ZADANIE 2.18
+
+Znaleźć liczbę cyfr zero w dużej liczbie całkowitej. Wskazówka: zamienić liczbę na napis.
+
+ZADANIE 2.19
+
+Na liście L mamy liczby jedno-, dwu- i trzycyfrowe dodatnie. Chcemy zbudować napis z trzycyfrowych bloków, gdzie liczby jedno- i dwucyfrowe będą miały blok dopełniony zerami, np. 007, 024. Wskazówka: str.zfill().
+
+
