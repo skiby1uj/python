@@ -3,9 +3,8 @@ print('Zad 4.6\n');
 def sum_seq(sequence):
 	output = 0;
 	if isinstance(sequence, (list, tuple)):
-		lenSeq = len(sequence)
-		for x in range(lenSeq):
-			output += int(sum_seq(sequence[x]))
+		for x in sequence:
+			output += int(sum_seq(x))
 	else:
 		return sequence
 	return output
