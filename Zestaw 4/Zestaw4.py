@@ -107,27 +107,26 @@ print('Zad 4.6\n');
 def sum_seq(sequence):
 	output = 0;
 	if isinstance(sequence, (list, tuple)):
-		lenSeq = len(sequence)
-		for x in range(lenSeq):
-			output += int(sum_seq(sequence[x]))
+		for x in sequence:
+			output += int(sum_seq(x))
 	else:
 		return sequence
 	return output
 sequence = [[],[4],(1,2),[3,4],(5,6,7)]
 print sum_seq(sequence)
 
+
 #Zad 4.7
 print('Zad 4.7\n');
 def flatten(sequence):
 	output = list()
 	if isinstance(sequence, (list, tuple)):
-		lenSeq = len(sequence)
-		for x in range(lenSeq):
-			if isinstance(sequence[x], (list, tuple)):
-				tmp = flatten(sequence[x])
+		for x in sequence:
+			if isinstance(x, (list, tuple)):
+				tmp = flatten(x)
 				output += tmp
 			else:
-				output.append(sequence[x])
+				output.append(x)
 	return output
 
 sequence = [1,(2,3),[],[4,(5,6,7)],8,[9]]
