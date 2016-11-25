@@ -27,7 +27,7 @@ def is_zero(frac):
 def frac2float(frac):
 	frac[0] = float(frac[0])
 	frac[1] = float(frac[1])
-	return float(frac[0] / frac[1])
+	return (frac[0] / frac[1])
 	
 def cmp_frac(frac1, frac2):
 	tmp1 = frac2float(frac1)
