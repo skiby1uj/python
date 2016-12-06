@@ -15,7 +15,7 @@ def DynamicFunction(i, j):
         else:
             tmp = P.get((i, j))
             if tmp != None:
-                return p
+                return tmp
             else:
                 tmp = 0.5*(DynamicFunction(i-1, j)+DynamicFunction(i, j-1))
                 P[(i, j)] = tmp
