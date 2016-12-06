@@ -1,0 +1,79 @@
+
+Zadania
+
+OBOWIĄZKOWE DO PRZESŁANIA: 8.1 (implementacja), 8.3, 8.4, 8.6
+ZADANIE 8.1
+
+Zbadać problem szukania rozwiązań równania liniowego postaci a * x + b * y + c = 0. Podać specyfikację problemu. Podać algorytm rozwiązania w postaci listy kroków, schematu blokowego, drzewa. Podać implementację algorytmu w Pythonie w postaci funkcji solve1(), która rozwiązania wypisuje w formie komunikatów.
+
+def solve1(a, b, c):
+    """Rozwiązywanie równania liniowego a x + b y + c = 0."""
+    pass
+
+ZADANIE 8.2
+
+Zbadać problem szukania rozwiązań równania kwadratowego postaci a * x * x + b * x + c = 0. Podać specyfikację problemu. Podać algorytm rozwiązania w postaci listy kroków, schematu blokowego, drzewa. Podać implementację algorytmu w Pythonie w postaci funkcji solve2(), która rozwiązania wypisuje w formie komunikatów.
+
+def solve2(a, b, c):
+    """Rozwiązywanie równania kwadratowego a * x * x + b * x + c = 0."""
+    pass
+
+ZADANIE 8.3
+
+Obliczyć liczbę pi za pomocą algorytmu Monte Carlo. Wykorzystać losowanie punktów z kwadratu z wpisanym kołem. Sprawdzić zależność dokładności wyniku od liczby losowań. Wskazówka: Skorzystać z modułu random.
+
+def calc_pi(n=100):
+    """Obliczanie liczby pi metodą Monte Carlo.
+    n oznacza liczbę losowanych punktów."""
+    pass
+
+ZADANIE 8.4
+
+Zaimplementować algorytm obliczający pole powierzchni trójkąta, jeżeli dane są trzy liczby będące długościami jego boków. Jeżeli podane liczby nie spełniają warunku trójkąta, to program ma generować wyjątek ValueError.
+
+def heron(a, b, c):
+    """Obliczanie pola powierzchni trójkąta za pomocą wzoru
+    Herona. Długości boków trójkąta wynoszą a, b, c."""
+    pass
+
+ZADANIE 8.5
+
+Zbadać zachowanie funkcji Ackermanna dla p = 1, 2, 3, 4 i różnych n. Wartości funkcji zebrać w tabeli.
+
+def ackermann(n, p):
+    """Funkcja Ackermanna, n i p to liczby naturalne.
+    Zachodzi A(0, p) = 1, A(n, 1) = 2n, A(n, 2) = 2 ** n,
+    A(n, 3) = 2 ** A(n-1, 3).
+    """
+    if n == 0:
+        return 1
+    if p == 0 and n >= 0:
+        if n == 1:
+            return 2
+        else:
+            return n + 2
+    if p >= 0 and n >= 1:
+        return ackermann(ackermann(n-1, p), p-1)
+
+Inna definicja funkcji Ackermanna
+http://mathworld.wolfram.com/AckermannFunction.html
+
+A(x,y) = y + 1 dla x=0
+A(x,y) = A(x-1, 1) dla y=0
+A(x,y) = A(x-1, A(x, y-1)) w pozostałych przypadkach
+
+A(0,y) = y + 1
+A(1,y) = A(0, A(1, y-1)) = 1 + A(1, y-1) = y + A(1, 0) = y + A(0, 1) = y + 2
+A(2,y) = 2 * y + 3
+A(3,y) = pow(2, y+3) - 3
+
+ZADANIE 8.6
+
+Za pomocą techniki programowania dynamicznego napisać program obliczający wartości funkcji P(i, j). Porównać z wersją rekurencyjną programu. Wskazówka: Wykorzystać tablicę dwuwymiarową (np. słownik) do przechowywania wartości funkcji. Wartości w tablicy wypełniać kolejno wierszami.
+
+P(0, 0) = 0.5,
+P(i, 0) = 0.0 dla i > 0,
+P(0, j) = 1.0 dla j > 0,
+P(i, j) = 0.5 * (P(i-1, j) + P(i, j-1)) dla i > 0, j > 0.
+
+
