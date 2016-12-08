@@ -1,0 +1,96 @@
+
+Zadania
+
+OBOWIĄZKOWE DO PRZESŁANIA: jedno zadanie z listami (9.1 - 9.6, 9.9) i jedno zadanie z drzewami (9.7, 9.8)
+ZADANIE 9.1 (SINGLELIST)
+
+Mamy listę jednokierunkową bez klasy SingleList. Napisać funkcje remove_head() i remove_tail(), które usuwają początkowy lub końcowy węzeł. Funkcje powinny zwracać parę (new_head, data). Funkcje powinny prawidłowo działać również dla pustej listy (rzucenie wyjątku ValueError) i listy jednoelementowej [zwracanie (None, data)].
+
+def remove_head(node): pass
+
+def remove_tail(node): pass
+
+# Zastosowanie.
+while head:
+    # head, data = remove_head(head)
+    head, data = remove_tail(head)
+    print "usuwam", data
+
+ZADANIE 9.2 (SINGLELIST)
+
+Mamy listy jednokierunkowe bez klasy SingleList. Napisać funkcję merge(), która łączy dwie listy przez podłączenie drugiej na koniec pierwszej, a zwraca nowy początek wspólnej listy. Uwzględnić możliwość pustych list.
+
+def merge(node1, node2): pass
+
+# Zastosowanie.
+head3 = merge(head1, head2)
+# Czyszczenie łączy.
+head1 = None                  # albo: del head1
+head2 = None                  # albo: del head2
+
+ZADANIE 9.3 (SINGLELIST)
+
+Mamy listę jednokierunkową bez klasy SingleList. Napisać funkcje find_max() i find_min(), które znajdują odpowiednio element największy i najmniejszy na liście, a następnie zwracają ten element.
+
+def find_max(node): pass
+
+def find_min(node): pass
+
+# Zastosowanie.
+print "max", find_max(head)
+print "min", find_min(head)
+
+ZADANIE 9.4 (SINGLELIST)
+
+Do klasy SingleList dodać metodę reverse(), która odwraca kolejność elementów na liście.
+
+class SingleList:
+# ... inne metody ...
+
+    def reverse(self): pass
+
+ZADANIE 9.5 (DOUBLELIST)
+
+Do klasy DoubleList dopisać metody remove_max() i remove_min(), które usuwają z listy element największy lub najmniejszy. Funkcje zwracają ten element. Dla pustej listy wywołujemy wyjątek Exception.
+
+ZADANIE 9.6 (SORTEDLIST)
+
+Na bazie list powiązanych pojedyńczo lub podwójnie stworzyć klasę SortedList, która przechowuje listę stale posortowaną.
+
+class SortedList:
+
+    def __init__(self): pass
+
+    def is_empty(self): pass
+
+    def count(self): pass
+
+    def insert(self, data): pass
+
+    def remove(self): pass          # zwraca element największy
+
+ZADANIE 9.7 (BINARYTREE)
+
+Mamy drzewo binarne bez klasy BinarySearchTree. Napisać funkcję count_leafs(top), która liczy liście drzewa binarnego. Liście to węzły, które nie mają potomków. Można podać rozwiązanie rekurencyjne lub rozwiązanie iteracyjne, które jawnie korzysta ze stosu.
+
+Załóżmy, że drzewo binarne przechowuje liczby. Napisać funkcję calc_total(top), która podaje sumę liczb przechowywanych w drzewie.
+
+def count_leafs(top): pass
+
+def count_total(top): pass
+
+ZADANIE 9.8 (BINARYSEARCHTREE)
+
+Dla drzewa BST napisać funkcje znajdujące największy i najmniejszy element przechowywany w drzewie. Mamy łącze do korzenia, nie ma klasy BinarySearchTree. Drzewo BST nie jest modyfikowane, a zwracana jest znaleziona wartość. W przypadku pustego drzewa należy wyzwolić wyjątek ValueError.
+
+def bst_max(top): pass
+
+def bst_min(top): pass
+
+ZADANIE 9.9 (LISTA CYKLICZNA)
+
+Napisać funkcję zwracającą liczbę węzłów listy cyklicznej, mając dane łącze do jednego z węzłów listy. Lista cykliczna nie jest pusta.
+
+ZADANIE 9.10 (HEAP)
+
+Zbadać wygląd sterty po wstawieniu do początkowo pustej sterty dwunastu różnych liczb całkowitych, wybranych losowo z przedziału od 0 do 100. 
