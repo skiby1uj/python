@@ -1,0 +1,1 @@
+#random.shufle(L) - mieszanie listy
