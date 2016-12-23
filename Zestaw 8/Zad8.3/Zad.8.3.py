@@ -13,11 +13,11 @@ def estimatePi(iloscTestow):
         odl = odlOdSrodka(x, y)
         if odl <= r:
             poleKola += 1
-        else:
-            poleKw += 1
+        # else:
+        poleKw += 1
     if poleKw == 0:
         raise ValueError ("Dzielenie przez 0")
-    return poleKola / float(poleKw)
+    return  (4 * poleKola) / float(poleKw)
 
 def odlOdSrodka(x, y):
     return math.sqrt(math.pow(x, 2) + pow(y, 2))

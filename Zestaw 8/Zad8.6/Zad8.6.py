@@ -7,6 +7,8 @@ def DynamicFunction(i, j):
         raise ValueError("i jest mniejsze od 0")
     elif j < 0:
         raise ValueError("j jest mniejsze od 0")
+    elif i == 0 and j == 0:
+        return 0.5
     else:
         if i == 0:
             return 1.0
@@ -26,6 +28,8 @@ def RecursionFunction(i, j):
         raise ValueError("i jest mniejsze od 0")
     elif j < 0:
         raise ValueError("j jest mniejsze od 0")
+    elif i == 0 and j == 0:
+        return 0.5
     else:
         if i == 0 and j == 0:
             return 0.5

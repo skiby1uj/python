@@ -10,8 +10,8 @@ def spr(a, b, c):
 def heron(a, b, c):
     if(spr(a, b, c) == False):
         raise ValueError ("Warunek trojkata jest nie spelniony")
-    l = (a + b + c)/2
-    return math.sqrt(l * (l - a)*(l-b)*(l-c))
+    polObw = (a + b + c)/2
+    return math.sqrt(polObw * (polObw - a)*(polObw-b)*(polObw-c))
 
 
 
