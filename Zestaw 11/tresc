@@ -1,0 +1,75 @@
+
+Zadania
+
+OBOWIĄZKOWE DO PRZESŁANIA: 11.1 i jedno z pozostałych
+ZADANIE 11.1
+
+Przygotować moduł Pythona z funkcjami tworzącymi listy liczb całkowitych do sortowania. Przydatne są m.in. następujące rodzaje danych:
+(a) różne liczby od 0 do N-1 w kolejności losowej,
+(b) różne liczby od 0 do N-1 prawie posortowane (liczby są blisko swojej prawidłowej pozycji),
+(c) różne liczby od 0 do N-1 prawie posortowane w odwrotnej kolejności,
+(d) N liczb w kolejności losowej o rozkładzie gaussowskim,
+(e) N liczb w kolejności losowej, o wartościach powtarzających się, należących do zbioru k elementowego (k < N, np. k*k = N).
+ZADANIE 11.2
+
+Dla wybranego algorytmu sortowania zbadać jego zachowanie w czasie działania. Do kodu wstawić funkcję zapisującą stan listy na danym etapie sortowania. Dane można zapisywać w pliku sort1.dat. w dwóch kolumnach: numer pozycji na liście i wartość liczby na tej pozycji. Liczby w wierszu może oddzielać spacja lub tabulacja. Wtedy poglądowy rysunek można wygenerować za pomocą skryptu dla programu Gnuplot. Poniżej podane są skrypty tworzące rysunki w formatach EPS, PNG, PDF.
+
+# Polecenia generowania rysunku w powłoce systemu UNIX.
+$ gnuplot sort1eps.gnu        # powstanie plik sort1.eps
+$ gnuplot sort1png.gnu        # powstanie plik sort1.png
+$ gnuplot sort1pdf.gnu        # powstanie plik sort1.pdf
+
+# Generowanie rysunku z poziomu skryptu pythona.
+import os
+
+os.system("gnuplot sort1eps.gnu")
+os.system("gnuplot sort1png.gnu")
+os.system("gnuplot sort1pdf.gnu")
+
+# Plik sort1eps.gnu
+set term postscript eps enhanced color 22
+set output "sort1.eps"
+
+set title "Sortowanie X"
+set xlabel "numer pozycji"              # opis osi x
+set ylabel "liczba na pozycji"          # opis osi y
+unset key                               # bez legendy
+
+plot "sort1.dat" using 1:2 with points pt 5
+
+# Plik sort1png.gnu
+set term png
+set output "sort1.png"
+
+set title "Sortowanie X"
+set xlabel "numer pozycji"              # opis osi x
+set ylabel "liczba na pozycji"          # opis osi y
+unset key                               # bez legendy
+
+plot "sort1.dat" using 1:2 with points pt 5
+
+# Plik sort1pdf.gnu
+set term pdf
+set output "sort1.pdf"
+
+set title "Sortowanie X"
+set xlabel "numer pozycji"              # opis osi x
+set ylabel "liczba na pozycji"          # opis osi y
+unset key                               # bez legendy
+
+plot "sort1.dat" using 1:2 with points pt 5
+
+Przykładowe rysunki dla różnych liczb od 0 do 49, które przed sortowaniem są w kolejności losowej.
+
+[ sort1 ]
+
+[ sort2 ]
+ZADANIE 11.3
+
+Poprawić wybrany algorytm sortowania, aby przyjmował jako dodatkowy argument funkcję porównującą elementy na liście (przykład na wykładzie dla bubblesort).
+ZADANIE 11.4
+
+Porównaj czasy działania wybranych algorytmów dla listy zawierającej N różnych liczb, przy N = 10**2, 10**3, 10**4, 10**5, 10**6.
+ZADANIE 11.5
+
+Zaimplementować w języku Python algorytm sortowania, który nie został omówiony na wykładzie. Dołączyć krótką informację o cechach algorytmu. 
