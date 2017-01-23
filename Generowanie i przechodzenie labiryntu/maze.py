@@ -86,7 +86,7 @@ class Maze:
             return None, None, None
         # print 'koniec'
         # randomQueue.printQueue()
-        return randomQueue.count(), randomQueue.remove(), countShouldNeugh
+        return randomQueue.count(), randomQueue, countShouldNeugh
 
     def printLab(self):
         for i in range(0, self.x):
@@ -97,36 +97,23 @@ class Maze:
     def generate(self):
         # print "in generate:"
         stack = Stack((self.x)*(self.y))
-        # count, param, countShouldNeigh = self.checkNeigh(0,0)
-        # print 'Ile jest: ' + str(count)
-        # print 'Param: ' + str(param)
-        # print 'Count Should: ' + str(countShouldNeigh)
-        param = [0,0]
-        count = None
-        countShouldNeigh = None
-        self.value[0][0] = '-'
-        stack.push([0, 0])
+        count, params, countShouldNeigh = self.checkNeigh(0,0)
+        self.value[0][0] = ' '
+        stack.push(params)
 
         while not stack.is_empty():
             # stack.printStack()
             pop = stack.pop()
-            count, param, countShouldNeigh = self.checkNeigh(pop[0], pop[1])#spr somsiada
-            if param is not None:
-                if count is not None and count > 1:
-                    stack.push(pop)
-                print 'Pole w ktorym jestem - ' + str(pop) + " count: " + str(count) + " should: " + str(countShouldNeigh) + " do ktorego chce isc: " + str(param)
+            randomNeighParam = pop.remove()#x, y sasiada do ktorego ide
+            if not pop.is_empty():#jesli cos jest jeszcze w naszym random to odkladamy na stos
+                stack.push(pop)
+            # print 'Pole w ktorym jestem - ' + str(randomNeighParam) + " count: " + str(count) + " should: " + str(countShouldNeigh) + " do ktorego chce isc: " + str(param)
+            count, params, countShouldNeigh = self.checkNeigh(randomNeighParam[0],randomNeighParam[1])
+            if params is not None and count+1 == countShouldNeigh:
+                stack.push(params)
+                self.value[randomNeighParam[0]][randomNeighParam[1]] = ' '
 
-                count, nextParam, countShouldNeigh = self.checkNeigh(param[0], param[1])#spr somsiada
-                if nextParam is not None and count+1 == countShouldNeigh:
-                    stack.push(param)
-                    self.value[param[0]][param[1]] = '-'
-                elif self.value[param[0]][param[1]] == '#':
-                    self.value[param[0]][param[1]] = 'x'
-
-
-
-
-tmp = Maze(3,3)
-tmp.printLab()
+tmp = Maze(100,100)
+# tmp.printLab()
 tmp.generate()
 tmp.printLab()
