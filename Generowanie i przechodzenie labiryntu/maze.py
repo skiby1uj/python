@@ -148,18 +148,14 @@ class Maze:
 
     def drawExitWay(self, exitPoint):
         while not(exitPoint[0] == 0 and exitPoint[1] == 0):
-
-            # print str(exitPoint[0])
-            # print str(exitPoint[1])
             pointParent = self.parent[exitPoint[0]][exitPoint[1]]
-            self.value[pointParent[0]][pointParent[1]] = 'z'
+            self.value[pointParent[0]][pointParent[1]] = '+'
             exitPoint = pointParent
         self.value[0][0] = 'S'
 
 
 
-tmp = Maze(10)
-# tmp.printLab()
+tmp = Maze(50)
 tmp.generate()
 tmp.printLab()
 exitPoint = tmp.goingThroughMaze()
